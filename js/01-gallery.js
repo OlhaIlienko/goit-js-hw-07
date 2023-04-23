@@ -30,11 +30,13 @@ gallery.addEventListener('click', onGalleryClick);
 
 function onGalleryClick (event) {
     event.preventDefault();
-    if(!event.target.classList.contains('.gallery__image')) {
+    if(!event.target.classList.contains('gallery__image')) {
         return;
     }
+    basicLightbox.create(`
+    <img src="${event.target.dataset.source}">
+`).show();
 }
 
 
 
-// console.log(galleryItems);
